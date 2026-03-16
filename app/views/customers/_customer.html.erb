@@ -1,0 +1,20 @@
+<div class="card" style="margin: 10px; padding: 15px; border: 1px solid #ddd; border-radius: 5px;">
+  <div>
+    <% if customer.image.attached? %>
+      <%= image_tag customer.image, width: 100, height: 100, style: "border-radius: 50%; object-fit: cover;" %>
+    <% else %>
+      <div style="width: 100px; height: 100px; background: #ccc; border-radius: 50%;"></div>
+    <% end %>
+  </div>
+
+  <div>
+    <h3><%= customer.full_name %></h3>
+    <p>Phone: <%= customer.phone_number %></p>
+    <% if customer.email.present? %>
+      <p>Email: <%= customer.email %></p>
+    <% else %>
+      <p style="color: red;">No email on file</p>
+    <% end %>
+    <p>Notes: <%= customer.notes %></p>
+  </div>
+</div>
